@@ -223,6 +223,8 @@
 
 <div id="stage">
 
+  <audio id="ambient" src="audio/waves.mp3" loop preload="auto"></audio>
+  
   <!-- SCENE 1: Entrance -->
   <div class="scene active" data-scene="entrance">
     <img class="bg" src="images/01.png" alt="A distant structure on a ridge, a sliver of light within it">
@@ -298,6 +300,15 @@
   }
 
   function hideText() {
+    let audioStarted = false;
+function startAmbience() {
+  if (audioStarted) return;
+  audioStarted = true;
+  const ambient = document.getElementById('ambient');
+  ambient.volume = 0.4;
+  ambient.play().catch(() => {});
+}
+document.getElementById('stage').addEventListener('click', startAmbience, { once: true });
     document.getElementById('textbox').classList.remove('visible');
   }
 
