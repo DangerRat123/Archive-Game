@@ -294,9 +294,13 @@
   }
 
   function goBack() {
-    const target = previousScene[currentScene];
-    if (target) goToScene(target);
+  const target = previousScene[currentScene];
+  if (target) {
+    goToScene(target);
+  } else {
+    window.location.href = '../index.html';
   }
+}
 
   function showText(id, el) {
     const box = document.getElementById('textbox');
