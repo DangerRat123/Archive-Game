@@ -305,7 +305,7 @@ function startAmbience() {
   if (audioStarted) return;
   audioStarted = true;
   const ambient = document.getElementById('ambient');
-  ambient.volume = 0.4;
+  ambient.volume = 0.3;
   ambient.play().catch(() => {});
 }
 document.getElementById('stage').addEventListener('click', startAmbience, { once: true });
