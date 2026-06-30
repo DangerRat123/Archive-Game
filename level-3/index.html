@@ -268,7 +268,7 @@
     if (audioStarted) return;
     audioStarted = true;
     const ambient = document.getElementById('ambient');
-    ambient.volume = 0.6;
+    ambient.volume = 0.9;
     ambient.play().catch(() => {});
   }
   document.getElementById('stage').addEventListener('click', startAmbience, { once: true });
