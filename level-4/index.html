@@ -185,7 +185,7 @@
   transition: left 0.5s cubic-bezier(.4,0,.2,1), top 0.5s cubic-bezier(.4,0,.2,1),
               width 0.5s cubic-bezier(.4,0,.2,1), filter 0.4s ease, transform 0.5s ease;
   filter: drop-shadow(0 0 6px rgba(217,232,122,0.25));
-  transform: rotate(0deg);
+  transform: rotate(5deg);
 }
 
   .paper-hotspot img {
@@ -202,8 +202,8 @@
 
   /* Zoomed state: centered, large, no longer clickable to re-trigger zoom-in */
   .paper-hotspot.zoomed {
-    left: 50% !important;
-    top: 50% !important;
+    left: -50% !important;
+    top: 20% !important;
     width: min(360px, 70vw) !important;
     transform: translate(-50%, -50%);
     z-index: 40;
