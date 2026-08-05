@@ -185,6 +185,21 @@
       </div>
     </a>
   </div>
+  
+<script>
+  const allComplete =
+    localStorage.getItem('level-1-complete') === 'true' &&
+    localStorage.getItem('level-2-complete') === 'true' &&
+    localStorage.getItem('level-3-complete') === 'true' &&
+    localStorage.getItem('level-4-complete') === 'true';
 
+  if (!allComplete) {
+    const card = document.getElementById('final-card');
+    card.classList.add('locked');
+    card.removeAttribute('href');
+    card.style.cursor = 'default';
+  }
+</script>
+  
 </body>
 </html>
