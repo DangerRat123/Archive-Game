@@ -321,6 +321,7 @@
 
   function openPaper(e) {
     e.stopPropagation();
+    localStorage.setItem('level-1-complete', 'true');
     const paper = document.getElementById('paper');
     if (paper.classList.contains('zoomed')) return; // already open, let scrim handle closing
     paper.classList.add('zoomed');
