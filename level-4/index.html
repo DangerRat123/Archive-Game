@@ -356,6 +356,16 @@
   // initial hint fade
   setTimeout(() => document.getElementById('hint').classList.add('hidden'), 3200);
 </script>
+<script>
+  const allComplete =
+    localStorage.getItem('level-1-complete') === 'true' &&
+    localStorage.getItem('level-2-complete') === 'true' &&
+    localStorage.getItem('level-3-complete') === 'true' &&
+    localStorage.getItem('level-4-complete') === 'true';
 
+  if (!allComplete) {
+    document.querySelector('.final-card').classList.add('locked');
+  }
+</script>
 </body>
 </html>
