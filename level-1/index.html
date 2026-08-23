@@ -306,8 +306,8 @@
     if (!birds) return;
 
     const originalSrc = birds.getAttribute('src');
-    const FLIGHT_DURATION = 55000; // ms - matches the gif's own loop length
-    const PAUSE_DURATION = 12000;  // ms - empty-sky gap between flights, tweak to taste
+    const FLIGHT_DURATION = 16300; // ms - matches the gif's own loop length
+    const PAUSE_DURATION = 10000;  // ms - empty-sky gap between flights, tweak to taste
 
     function cycle() {
       // start a fresh flight (cache-bust so the gif restarts at frame 1)
