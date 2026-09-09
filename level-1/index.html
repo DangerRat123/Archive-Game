@@ -237,6 +237,29 @@
   @media (max-width: 640px) {
     .paper-hotspot.zoomed { width: min(280px, 78vw) !important; }
   }
+  #home-btn {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  z-index: 50;
+  color: var(--glow-dim);
+  font-family: 'Courier New', monospace;
+  font-size: 22px;
+  line-height: 1;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, color 0.2s ease;
+}
+
+#home-btn:hover {
+  color: var(--glow);
+}
+
+#home-btn.visible {
+  opacity: 0.7;
+  pointer-events: auto;
+}
 </style>
 </head>
 <body>
