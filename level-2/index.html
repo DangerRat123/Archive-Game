@@ -306,6 +306,14 @@
     document.querySelector(`.scene[data-scene="${name}"]`).classList.add('active');
     currentScene = name;
     hideText();
+
+// show/hide home button
+const homeBtn = document.getElementById('home-btn');
+if (name === 'final') {
+  homeBtn.classList.add('visible');
+} else {
+  homeBtn.classList.remove('visible');
+}
     const hint = document.getElementById('hint');
     if (name === 'final') {
       hint.textContent = 'click to examine';
