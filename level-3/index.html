@@ -12,7 +12,27 @@
     --panel-bg: rgba(8, 16, 6, 0.88);
     --panel-border: rgba(217, 232, 122, 0.25);
   }
+#shader {
+  position: absolute;
+  inset: 0;
+  z-index: 31;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.3) 2px,
+    rgba(0, 0, 0, 0.3) 4px
+  );
+  background-size: 100% 4px;
+  animation: scanline-drift 8s linear infinite;
+}
 
+@keyframes scanline-drift {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100vh; }
+}
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   html, body {
@@ -282,6 +302,7 @@
     <span id="textbox-content"></span>
   </div>
 <a id="home-btn" href="../index.html">X</a>
+  <div id="shader"></div>
 <div id="grain"></div>
 </div>
 
