@@ -46,12 +46,17 @@
   }
 
   .levels {
-    display: flex;
-    gap: 36px;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  gap: 36px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+.levels .level-card:nth-child(1) { margin-top: 40px; }
+.levels .level-card:nth-child(2) { margin-top: 10px; }
+.levels .level-card:nth-child(3) { margin-top: 10px; }
+.levels .level-card:nth-child(4) { margin-top: 40px; }
   }
-
   .level-card {
     position: relative;
     width: 320px;
