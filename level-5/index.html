@@ -451,9 +451,17 @@ if (name === 'final') {
   }
 
   function submitIdentity() {
-    document.getElementById('textbox-content').textContent = archiveDenial;
-    document.getElementById('textbox-input-row').classList.remove('visible');
-  }
+  const response = document.getElementById('archive-input').value.trim();
+
+  // Send to Google Sheet
+  const FORM_ID = '1FAIpQLSdWxmFL2mH8XaV-Cep-MSu0mrpbM5J2UiltWIlB-DEoEBMyig';
+  const ENTRY_ID = '679384944';
+  const url = `https://docs.google.com/forms/d/e/${FORM_ID}/formResponse?entry.${ENTRY_ID}=${encodeURIComponent(response)}&submit=Submit`;
+  fetch(url, { method: 'POST', mode: 'no-cors' }).catch(() => {});
+
+  document.getElementById('textbox-content').textContent = archiveDenial;
+  document.getElementById('textbox-input-row').classList.remove('visible');
+}
 
   document.getElementById('archive-input').addEventListener('keydown', (e) => {
     if (e.key === 'Enter') submitIdentity();
