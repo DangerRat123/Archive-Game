@@ -96,26 +96,6 @@
     inset: 0;
   }
 
-  /* Birds overlay: decorative only, never intercepts clicks, sits above the
-     background art but below hotspots/UI. Position/size it to taste. */
-  .birds-overlay {
-    position: absolute;
-    top: 2%;
-    left: 45%;
-    width: 55%;
-    height: auto;
-    z-index: 4;
-    pointer-events: none;
-    user-select: none;
-    -webkit-user-drag: none;
-    opacity: 0.8;
-    transition: opacity 0.8s ease;
-  }
-
-  .birds-overlay.paused {
-    opacity: 0;
-  }
-
   /* Bottom text box */
   #textbox {
     position: absolute;
@@ -393,24 +373,6 @@ if (name === 'final') {
     }
     if (name === 'entrance') playBirdsOnce();
   }
-
-  // Plays the birds gif through once, then hides it (no looping).
-  // Called on first load and every time we arrive back at the entrance scene.
-  const BIRDS_FLIGHT_DURATION = 16300; // ms - match your gif's actual length
-  function playBirdsOnce() {
-    const birds = document.getElementById('birdsOverlay');
-    if (!birds) return;
-    const originalSrc = birds.getAttribute('src').split('?')[0];
-    birds.classList.remove('paused');
-    birds.src = '';
-    birds.src = originalSrc + '?t=' + Date.now();
-    clearTimeout(birds._hideTimer);
-    birds._hideTimer = setTimeout(() => {
-      birds.classList.add('paused');
-    }, BIRDS_FLIGHT_DURATION);
-  }
-  playBirdsOnce(); // play on initial page load too
-
   function goBack() {
   const target = previousScene[currentScene];
   if (target) {
